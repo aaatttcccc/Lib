@@ -1,0 +1,6 @@
+<resources>
+    <!-- 信息提示 -->
+    <string name="msg_loading">正在加载数据,请稍后&#8230;</string>
+    <string name="msg_alter_title">温馨提示</string>
+
+</resources>

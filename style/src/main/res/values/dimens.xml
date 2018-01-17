@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="divider">1dp</dimen>
+
+    <!-- 间距-纳米 -->
+    <dimen name="spacing_nano">2dp</dimen>
+    <!-- 间距微 -->
+    <dimen name="spacing_micro">4dp</dimen>
+    <!-- 间距正常的 -->
+    <dimen name="spacing_normal">8dp</dimen>
+    <!-- 间距-双 -->
+    <dimen name="spacing_double">16dp</dimen>
+    <!-- 间距-巨大的 -->
+    <dimen name="spacing_huge">72dp</dimen>
+
+    <!-- fab大小 -->
+    <dimen name="size_fab">56dp</dimen>
+    <!-- 化身 工具栏大小 -->
+    <dimen name="size_avatar_toolbar">40dp</dimen>
+
+    <!--<dimen name="size_score_mark">24dp</dimen>-->
+
+    <!-- 阴影 -->
+    <dimen name="elevation_header">4dp</dimen>
+
+    <!-- 最小高度接触目标 宽度 -->
+    <dimen name="min_height_touch_target">48dp</dimen>
+    <!-- 最小高度的问题 -->
+    <dimen name="min_height_question">144dp</dimen>
+
+    <!-- 头像宽度 -->
+    <dimen name="stroke_width_avatar">4dp</dimen>
+
+    <!-- 大字体 -->
+    <dimen name="size_edit_text">18sp</dimen>
+    <!-- 小字体 -->
+    <dimen name="category_item_text_size">14sp</dimen>
+
+
+</resources>

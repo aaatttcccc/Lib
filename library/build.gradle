@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
+    //这里是在开发工具上显示出libs
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+
+        instrumentTest.setRoot('tests')
+
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // java8版本
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    //官方系列包
+    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:design:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:support-v4:$rootProject.ext.androidSupportSdkVersion"
+
+    //******************************* 自建库 ****************************************//
+    //动感的底部
+    compile project(':Lib:sweetsheet')
+    //动感的弹窗
+    compile project(':Lib:sweet_alert_dialog')
+    //fragment
+    compile project(':Lib:fragmentation')
+    // fragment 搭配 eventbus
+    compile project(':Lib:eventbus_activity_scope')
+//    compile 'me.yokeyword:fragmentation:1.1.8'
+
+    //******************************* 框架库 ****************************************//
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    //RxJava2 Adapter 大神写的一个让rxjava2兼容retrofit2
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //RxJava2 Adapter
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //retrofit2核心包
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit2Version"
+
+    //Fragment封装框架 https://github.com/YoKeyword/Fragmentation
+//    compile 'me.yokeyword:fragmentation:1.1.7'
+    //可以依赖注解
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //异步加载图片
+    compile 'com.github.bumptech.glide:glide:4.2.0'
+    //发送事件
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //封装的拍照、选择照片事件
+    compile 'com.lzy.widget:imagepicker:0.6.1'
+    compile project(path: ':commonFinal')
+}

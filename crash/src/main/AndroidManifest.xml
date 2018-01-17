@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lib.crash">
+
+    <application>
+        <activity
+            android:name=".ui.CatchActivity"
+            android:label="异常日志"
+            android:theme="@style/Theme.Pecker"/>
+
+    </application>
+
+</manifest>
