@@ -1,3 +1,3 @@
 
-include ':app', ':library', ':datalist', ':style', ':materialsearchview', ':crash', ':complextable', ':sweetsheet', ':fragmentation', ':fragmentation_core'
+include ':app', ':library', ':datalist', ':style', ':materialsearchview', ':crash', ':complextable', ':sweetsheet', ':fragmentation', ':fragmentation_core', ':calendarview'
 
