@@ -8,6 +8,7 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="divider">1dp</dimen>
+    <dimen name="divider8">8dp</dimen>
 
     <!-- 间距-纳米 -->
     <dimen name="spacing_nano">2dp</dimen>
