@@ -91,8 +91,8 @@ public class CalendarView extends FrameLayout {
      */
     private void init(Context context) {
         LayoutInflater.from(context).inflate(R.layout.cv_layout_calendar_view, this, true);
-        FrameLayout frameContent = (FrameLayout) findViewById(R.id.frameContent);
-        this.mWeekPager = (WeekViewPager) findViewById(R.id.vp_week);
+        FrameLayout frameContent = findViewById(R.id.frameContent);
+        this.mWeekPager = findViewById(R.id.vp_week);
         this.mWeekPager.setup(mDelegate);
 
         if (TextUtils.isEmpty(mDelegate.getWeekBarClass())) {
@@ -113,14 +113,14 @@ public class CalendarView extends FrameLayout {
         this.mWeekLine = findViewById(R.id.line);
         this.mWeekLine.setBackgroundColor(mDelegate.getWeekLineBackground());
 
-        this.mMonthPager = (MonthViewPager) findViewById(R.id.vp_calendar);
+        this.mMonthPager = findViewById(R.id.vp_calendar);
         this.mMonthPager.mWeekPager = mWeekPager;
         this.mMonthPager.mWeekBar = mWeekBar;
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) this.mMonthPager.getLayoutParams();
         params.setMargins(0, mDelegate.getWeekBarHeight() + Util.dipToPx(context, 1), 0, 0);
         mWeekPager.setLayoutParams(params);
 
-        mSelectLayout = (YearSelectLayout) findViewById(R.id.selectLayout);
+        mSelectLayout = findViewById(R.id.selectLayout);
         mSelectLayout.setBackgroundColor(mDelegate.getYearViewBackground());
         mSelectLayout.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -306,6 +306,7 @@ public class CalendarView extends FrameLayout {
     }
 
 
+
     /**
      * 年月份选择视图是否打开
      *
@@ -321,6 +322,7 @@ public class CalendarView extends FrameLayout {
     public void closeYearSelectLayout() {
         int position = 12 * (mDelegate.mSelectedCalendar.getYear() - mDelegate.getMinYear()) +
                 mDelegate.mSelectedCalendar.getMonth() - mDelegate.getMinYearMonth();
+        mDelegate.isShowYearSelectedLayout = false;
         closeSelectLayout(position);
     }
 

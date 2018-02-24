@@ -97,6 +97,9 @@ public final class YearRecyclerView extends RecyclerView {
         mAdapter.setItemHeight(h / 4);
     }
 
+    /**
+     * 年的月份选择
+     */
     interface OnMonthSelectedListener {
         void onMonthSelected(int year, int month);
     }
