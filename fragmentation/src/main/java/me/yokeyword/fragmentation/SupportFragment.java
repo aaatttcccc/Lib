@@ -20,8 +20,6 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
 public class SupportFragment extends Fragment implements ISupportFragment {
     final SupportFragmentDelegate mDelegate = new SupportFragmentDelegate(this);
     protected FragmentActivity _mActivity;
-    public Bundle mReenterState; // 这是获取返回来的界面的共享元素数据
-    public Bundle mBundleResult; // 返回bundle的数据
 
     @Override
     public SupportFragmentDelegate getSupportDelegate() {
@@ -104,16 +102,30 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     }
 
     /**
-     * If you want to call the start()/pop()/showHideFragment() on the onCreateXX/onActivityCreated,
-     * call this method to deliver the transaction to the queue.
-     * <p>
-     * 在onCreate/onCreateView/onActivityCreated中使用 start()/pop()/showHideFragment(),请使用该方法把你的任务入队
+     * Causes the Runnable r to be added to the action queue.
      *
-     * @param runnable start() , pop() or showHideFragment()
+     * The runnable will be run after all the previous action has been run.
+     *
+     * 前面的事务全部执行后 执行该Action
+     *
+     * @deprecated Use {@link #post(Runnable)} instead.
      */
+    @Deprecated
     @Override
     public void enqueueAction(Runnable runnable) {
         mDelegate.enqueueAction(runnable);
+    }
+
+    /**
+     * Causes the Runnable r to be added to the action queue.
+     *
+     * The runnable will be run after all the previous action has been run.
+     *
+     * 前面的事务全部执行后 执行该Action
+     */
+    @Override
+    public void post(Runnable runnable) {
+        mDelegate.post(runnable);
     }
 
     /**
@@ -204,20 +216,19 @@ public class SupportFragment extends Fragment implements ISupportFragment {
 
     /**
      * 类似 {@link Activity#setResult(int, Intent)}
-     * <p>
+     *
      * Similar to {@link Activity#setResult(int, Intent)}
      *
      * @see #startForResult(ISupportFragment, int)
      */
     @Override
     public void setFragmentResult(int resultCode, Bundle bundle) {
-        mBundleResult = bundle;
         mDelegate.setFragmentResult(resultCode, bundle);
     }
 
     /**
      * 类似  {@link Activity#onActivityResult(int, int, Intent)}
-     * <p>
+     *
      * Similar to {@link Activity#onActivityResult(int, int, Intent)}
      *
      * @see #startForResult(ISupportFragment, int)
@@ -230,11 +241,12 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     /**
      * 在start(TargetFragment,LaunchMode)时,启动模式为SingleTask/SingleTop, 回调TargetFragment的该方法
      * 类似 {@link Activity#onNewIntent(Intent)}
-     * <p>
+     *
      * Similar to {@link Activity#onNewIntent(Intent)}
      *
-     * @param args putNewBundle(Bundle newBundle)
      * @see #start(ISupportFragment, int)
+     *
+     * @param args putNewBundle(Bundle newBundle)
      */
     @Override
     public void onNewBundle(Bundle args) {
@@ -327,7 +339,7 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     }
 
     /**
-     * Launch a fragment while poping self.
+     * Start the target Fragment and pop itself
      */
     public void startWithPop(ISupportFragment toFragment) {
         mDelegate.startWithPop(toFragment);
@@ -351,7 +363,7 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     /**
      * Pop the last fragment transition from the manager's fragment
      * back stack.
-     * <p>
+     *
      * 出栈到目标fragment
      *
      * @param targetFragmentClass   目标fragment
@@ -415,23 +427,5 @@ public class SupportFragment extends Fragment implements ISupportFragment {
      */
     public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
-    }
-
-    /**
-     * 转换数据变换之后
-     *
-     * @param data 数据源
-     */
-    public void onActivityReenter(int resultCode, Intent data) {
-        mReenterState = new Bundle(data.getExtras());
-    }
-
-    /**
-     * activity关闭之后触发
-     */
-    public void finish() {
-    }
-
-    public void finishAfterTransition() {
     }
 }

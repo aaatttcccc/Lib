@@ -1,6 +1,5 @@
 package me.yokeyword.fragmentation;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
@@ -8,12 +7,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentationHack;
+import android.support.v4.app.FragmentationMagician;
 import android.view.MotionEvent;
 
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 import me.yokeyword.fragmentation.debug.DebugStackDelegate;
+import me.yokeyword.fragmentation.queue.Action;
 
 public class SupportActivityDelegate {
     private ISupportActivity mSupport;
@@ -28,7 +28,7 @@ public class SupportActivityDelegate {
     private DebugStackDelegate mDebugStackDelegate;
 
     public SupportActivityDelegate(ISupportActivity support) {
-        if (!(support instanceof Activity))
+        if (!(support instanceof FragmentActivity))
             throw new RuntimeException("Must extends FragmentActivity/AppCompatActivity");
         this.mSupport = support;
         this.mActivity = (FragmentActivity) support;
@@ -39,7 +39,7 @@ public class SupportActivityDelegate {
      * 额外的事务：自定义Tag，添加SharedElement动画，操作非回退栈Fragment
      */
     public ExtraTransaction extraTransaction() {
-        return new ExtraTransaction.ExtraTransactionImpl<>(getTopFragment(), getTransactionDelegate(), true);
+        return new ExtraTransaction.ExtraTransactionImpl<>((FragmentActivity) mSupport, getTopFragment(), getTransactionDelegate(), true);
     }
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,7 +77,7 @@ public class SupportActivityDelegate {
     public void setFragmentAnimator(FragmentAnimator fragmentAnimator) {
         this.mFragmentAnimator = fragmentAnimator;
 
-        for (Fragment fragment : FragmentationHack.getActiveFragments(getSupportFragmentManager())) {
+        for (Fragment fragment : FragmentationMagician.getActiveFragments(getSupportFragmentManager())) {
             if (fragment instanceof ISupportFragment) {
                 ISupportFragment iF = (ISupportFragment) fragment;
                 SupportFragmentDelegate delegate = iF.getSupportDelegate();
@@ -132,18 +132,34 @@ public class SupportActivityDelegate {
     }
 
     /**
+     * Causes the Runnable r to be added to the action queue.
+     *
+     * The runnable will be run after all the previous action has been run.
+     *
+     * 前面的事务全部执行后 执行该Action
+     */
+    public void post(final Runnable runnable) {
+        mTransactionDelegate.post(runnable);
+    }
+
+    /**
      * 不建议复写该方法,请使用 {@link #onBackPressedSupport} 代替
      */
     public void onBackPressed() {
-        if (!mFragmentClickable) {
-            mFragmentClickable = true;
-        }
+        mTransactionDelegate.mActionQueue.enqueue(new Action(Action.ACTION_BACK) {
+            @Override
+            public void run() {
+                if (!mFragmentClickable) {
+                    mFragmentClickable = true;
+                }
 
-        // 获取activeFragment:即从栈顶开始 状态为show的那个Fragment
-        ISupportFragment activeFragment = SupportHelper.getActiveFragment(getSupportFragmentManager());
-        if (mTransactionDelegate.dispatchBackPressedEvent(activeFragment)) return;
+                // 获取activeFragment:即从栈顶开始 状态为show的那个Fragment
+                ISupportFragment activeFragment = SupportHelper.getActiveFragment(getSupportFragmentManager());
+                if (mTransactionDelegate.dispatchBackPressedEvent(activeFragment)) return;
 
-        mSupport.onBackPressedSupport();
+                mSupport.onBackPressedSupport();
+            }
+        });
     }
 
     /**
@@ -228,10 +244,10 @@ public class SupportActivityDelegate {
     }
 
     /**
-     * Launch a fragment while poping self.
+     * Start the target Fragment and pop itself
      */
     public void startWithPop(ISupportFragment toFragment) {
-        mTransactionDelegate.dispatchStartTransaction(getSupportFragmentManager(), getTopFragment(), toFragment, 0, ISupportFragment.STANDARD, TransactionDelegate.TYPE_ADD_WITH_POP);
+        mTransactionDelegate.startWithPop(getSupportFragmentManager(), getTopFragment(), toFragment);
     }
 
     public void replaceFragment(ISupportFragment toFragment, boolean addToBackStack) {
@@ -242,7 +258,7 @@ public class SupportActivityDelegate {
      * Pop the child fragment.
      */
     public void pop() {
-        mTransactionDelegate.back(getSupportFragmentManager());
+        mTransactionDelegate.pop(getSupportFragmentManager());
     }
 
     /**

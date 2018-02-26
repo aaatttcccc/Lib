@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentationHack;
+import android.support.v4.app.FragmentationMagician;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.TypedValue;
@@ -146,7 +146,7 @@ public class DebugStackDelegate implements SensorEventListener {
     private List<DebugFragmentRecord> getFragmentRecords() {
         List<DebugFragmentRecord> fragmentRecordList = new ArrayList<>();
 
-        List<Fragment> fragmentList = FragmentationHack.getActiveFragments(mActivity.getSupportFragmentManager());
+        List<Fragment> fragmentList = FragmentationMagician.getActiveFragments(mActivity.getSupportFragmentManager());
 
         if (fragmentList == null || fragmentList.size() < 1) return null;
 
@@ -181,7 +181,7 @@ public class DebugStackDelegate implements SensorEventListener {
     private List<DebugFragmentRecord> getChildFragmentRecords(Fragment parentFragment) {
         List<DebugFragmentRecord> fragmentRecords = new ArrayList<>();
 
-        List<Fragment> fragmentList = FragmentationHack.getActiveFragments(parentFragment.getChildFragmentManager());
+        List<Fragment> fragmentList = FragmentationMagician.getActiveFragments(parentFragment.getChildFragmentManager());
         if (fragmentList == null || fragmentList.size() < 1) return null;
 
         for (int i = fragmentList.size() - 1; i >= 0; i--) {
@@ -200,7 +200,8 @@ public class DebugStackDelegate implements SensorEventListener {
             } else {
                 for (int j = 0; j < backStackCount; j++) {
                     FragmentManager.BackStackEntry entry = fragment.getFragmentManager().getBackStackEntryAt(j);
-                    if (entry.getName().equals(fragment.getClass().getName())) {
+                    if ((entry.getName() != null && entry.getName().equals(fragment.getTag()))
+                            || (entry.getName() == null && fragment.getTag() == null)) {
                         break;
                     }
                     if (j == backStackCount - 1) {

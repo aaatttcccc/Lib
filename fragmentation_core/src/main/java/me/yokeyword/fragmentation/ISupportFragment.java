@@ -25,7 +25,7 @@ public interface ISupportFragment {
 
     @IntDef({STANDARD, SINGLETOP, SINGLETASK})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface LaunchMode {
+    @interface LaunchMode {
     }
 
     SupportFragmentDelegate getSupportDelegate();
@@ -33,6 +33,8 @@ public interface ISupportFragment {
     ExtraTransaction extraTransaction();
 
     void enqueueAction(Runnable runnable);
+
+    void post(Runnable runnable);
 
     void onEnterAnimationEnd(@Nullable Bundle savedInstanceState);
 
