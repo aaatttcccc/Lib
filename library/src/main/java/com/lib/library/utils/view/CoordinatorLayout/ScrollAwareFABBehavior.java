@@ -64,7 +64,6 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
 
                         public void onAnimationEnd(View view) {
                             ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
-//                            view.setVisibility(View.GONE);
                         }
                     }).start();
         } else {

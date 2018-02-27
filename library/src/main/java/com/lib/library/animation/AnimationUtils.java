@@ -5,17 +5,26 @@ import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPropertyAnimatorListener;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.Interpolator;
 
 import com.lib.library.R;
+import com.lib.library.utils.view.CoordinatorLayout.ScrollAwareFABBehavior;
 
 /**
  * 动画集合工具
  * Created by Administrator on 2017/7/27 0027.
  */
 public class AnimationUtils {
+    // 动画形式
+    private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
 
     /**
      * 回调接口
@@ -30,7 +39,7 @@ public class AnimationUtils {
      * @param animatedVectorDrawable 该控件
      * @param onVectorAnimationEnd   结束动画事件
      */
-    public static void VectorAnimationCallback( AnimatedVectorDrawable animatedVectorDrawable, OnVectorAnimationEnd onVectorAnimationEnd) {
+    public static void VectorAnimationCallback(AnimatedVectorDrawable animatedVectorDrawable, OnVectorAnimationEnd onVectorAnimationEnd) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             animatedVectorDrawable.registerAnimationCallback(new Animatable2.AnimationCallback() {
                 @Override
@@ -95,5 +104,40 @@ public class AnimationUtils {
         animation.setRepeatCount(Animation.INFINITE);
         view.startAnimation(animation);
     }
+
+    /**
+     * 下降动画
+     *
+     * @param floatingActionButton floatingActionButton
+     */
+    public static void DropAnimation(FloatingActionButton floatingActionButton) {
+        ViewCompat.animate(floatingActionButton).translationY(floatingActionButton.getHeight() + getMarginBottom(floatingActionButton)).setInterpolator(INTERPOLATOR).withLayer().start();
+    }
+
+    /**
+     * 上升动画
+     * @param floatingActionButton floatingActionButton
+     */
+    public static void RisingAnimation(FloatingActionButton floatingActionButton) {
+        ViewCompat.animate(floatingActionButton).translationY(0)
+                .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
+                .start();
+    }
+
+    /**
+     * 获取底部距离值
+     *
+     * @param v 按钮
+     * @return 数值
+     */
+    private static int getMarginBottom(View v) {
+        int marginBottom = 0;
+        final ViewGroup.LayoutParams layoutParams = v.getLayoutParams();
+        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+            marginBottom = ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
+        }
+        return marginBottom;
+    }
+
 
 }
