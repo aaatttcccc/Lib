@@ -97,7 +97,6 @@
 
     <!-- main theme -->
     <style name="Theme.DesignDemo.Main" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--<item name="android:windowBackground">@drawable/ic_start</item>-->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>

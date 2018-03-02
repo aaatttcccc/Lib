@@ -109,8 +109,9 @@ public abstract class BaseActivity extends MySupportActivity {
         return this;
     }
 
+
     /**
-     * 等同于onCreate(Bundle savedInstanceState)
+     * 等同于onCreate之后(Bundle savedInstanceState)
      *
      * @param savedInstanceState bundle
      * @see #onCreate
