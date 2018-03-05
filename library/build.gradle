@@ -70,6 +70,10 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     //retrofit2核心包
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit2Version"
+    //Gson converter
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Version"
+    //Log拦截器
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
 
     //Fragment封装框架 https://github.com/YoKeyword/Fragmentation
 //    compile 'me.yokeyword:fragmentation:1.1.7'

@@ -5,23 +5,28 @@ import android.app.Application;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class MyApplication extends Application {
+public class BaseApplication extends Application {
 
     private BaseActivity mCurrentActivity;
-    private static MyApplication mInstance = null;
+    private static String baseUrl;
+    private static BaseApplication mInstance = null;
+    protected Boolean networkAvailable = false;
+    private Toast mToast;
 
-    public static MyApplication getInstance() {
+    public static BaseApplication getInstance() {
         if (mInstance == null) {
             throw new IllegalStateException("Application is not created.");
         }
         return mInstance;
     }
 
+    public static String getBaseUrl() {
+        return baseUrl;
+    }
 
-    protected Boolean networkAvailable = false;
-
-
-    private Toast mToast;
+    public static void setBaseUrl(String baseUrl) {
+        BaseApplication.baseUrl = baseUrl;
+    }
 
     /**
      * 用于显示同一个toast

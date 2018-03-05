@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 
-import com.lib.library.phone.MyApplication;
+import com.lib.library.phone.BaseApplication;
 
 import java.util.Map;
 import java.util.Set;
@@ -41,7 +41,7 @@ public class SPUtils {
      * @param spName spName
      */
     public void init(String spName) {
-        sp = MyApplication.getInstance().getSharedPreferences(spName, Context.MODE_PRIVATE);
+        sp = BaseApplication.getInstance().getSharedPreferences(spName, Context.MODE_PRIVATE);
         editor = sp.edit();
         editor.apply();
     }

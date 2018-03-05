@@ -1,19 +1,8 @@
 package com.lib.library.rxjava;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Looper;
-import android.widget.Toast;
-
 import com.lib.library.event.MyApplicationEvent;
-import com.lib.library.log.PrintToFileLogger;
 
 import org.greenrobot.eventbus.EventBus;
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
-import java.util.ArrayList;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.CompositeDisposable;
