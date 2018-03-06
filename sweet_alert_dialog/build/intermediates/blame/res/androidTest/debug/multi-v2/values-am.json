@@ -4,7 +4,11 @@
             "outputFile": "H:\\Common\\Lib\\sweet_alert_dialog\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\zhongjh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-21.0.0.aar\\1430d581df5da5d0bba02dfdf652a090\\res\\values-am\\values.xml",
+=======
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-21.0.0.aar\\2984cb7003f11add921775fc6025271a\\res\\values-am\\values.xml",
+>>>>>>> origin/master
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
