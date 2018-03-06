@@ -27,8 +27,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //官方系列包
-    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
+    provided "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
+    provided "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
 
 
     testImplementation 'junit:junit:4.12'
