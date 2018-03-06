@@ -43,10 +43,16 @@ public class QiniuUploadRequest implements TokenLisntener {
         this.qiniuCallback = qiniuCallback;
     }
 
+
     /**
      * 上传实体类
      */
     private UploadBean uploadBean = new UploadBean();
+
+    public void setUploadBean(UploadBean uploadBean) {
+        this.uploadBean = uploadBean;
+    }
+
 
     /**
      * 请求token类

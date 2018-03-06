@@ -25,7 +25,6 @@ public class QiniuRequest {
      * @param qiniuCallback 回调
      */
     public static void uploadImage(Context context, UploadBean bean, QiniuCallback qiniuCallback) {
-
         if (context == null) {
             return;
         }
@@ -38,6 +37,7 @@ public class QiniuRequest {
 
         // 赋值回调事件
         request.setQiniuCallback(qiniuCallback);
+        request.setUploadBean(bean);
 
         // 时间判定
         String dataString = QiniuSharedPref.getDate();
