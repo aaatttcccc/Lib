@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Study\\Work\\Android\\Common\\Lib\\sweet_alert_dialog\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
+            "outputFile": "H:\\Common\\Lib\\sweet_alert_dialog\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-21.0.0.aar\\58ad0e9fbfc11ad7c37c69e60f9f7fb1\\res\\values-w360dp\\values.xml",
+                    "source": "C:\\Users\\zhongjh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-21.0.0.aar\\1430d581df5da5d0bba02dfdf652a090\\res\\values-w360dp\\values.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
