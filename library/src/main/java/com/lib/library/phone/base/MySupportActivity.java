@@ -30,17 +30,18 @@ public class MySupportActivity extends SupportActivity {
 
     /**
      * 转换数据变换之后
+     *
      * @param data 数据源
      */
     @Override
     public void onActivityReenter(int resultCode, Intent data) {
         super.onActivityReenter(resultCode, data);
+
         MySupportFragment fragment = (MySupportFragment) getTopFragment();
         if (fragment != null) {
-            fragment.onActivityReenter(resultCode,data);
+            fragment.onActivityReenter(resultCode, data);
         }
     }
-
 
 
 }

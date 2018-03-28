@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 
 import com.lib.library.R;
-import com.lib.library.utils.view.CoordinatorLayout.ScrollAwareFABBehavior;
 
 /**
  * 动画集合工具

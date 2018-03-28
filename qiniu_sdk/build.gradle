@@ -19,14 +19,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.qiniu:qiniu-android-sdk:7.3.10'
-    provided "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
     //******************************* 框架库 ****************************************//
 
     //其他工具
-    provided project(':Lib:library')
+    implementation project(':Lib:library')
 
 
 }

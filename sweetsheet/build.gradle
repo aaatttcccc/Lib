@@ -25,9 +25,9 @@ android {
 }
 
 dependencies {
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
 }
 
 
