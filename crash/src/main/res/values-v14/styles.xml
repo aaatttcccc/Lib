@@ -29,7 +29,4 @@
     <style name="Base.Theme.Pecker"
         parent="android:Theme.Holo.Light.DarkActionBar"/>
 
-    <style name="Theme.Pecker.NoTitleBar"
-        parent="android:Theme.Holo.NoActionBar"/>
-
 </resources>

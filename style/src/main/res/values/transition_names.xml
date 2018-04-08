@@ -17,6 +17,4 @@
 <resources>
     <!-- Transitions 动画，5.0api才支持 -->
     <string name="transition_name" translatable="false">square_transition</string>
-    <string name="transition_avatar">AvatarTransition</string>
-    <string name="transition_toolbar">ToolbarTransition</string>
 </resources>

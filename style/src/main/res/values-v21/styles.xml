@@ -16,19 +16,10 @@
 
 <resources>
 
-    <style name="Theme.DesignDemo" parent="Base.Theme.DesignDemo">
-        <!--<main_two_item_head name="android:windowDrawsSystemBarBackgrounds">true</main_two_item_head>-->
-        <!--<main_two_item_head name="android:statusBarColor">@android:color/transparent</main_two_item_head>-->
-    </style>
-
     <!-- 这是为了兼容版本，不警告 -->
     <!-- 新版本动画 -->
     <style name="transitionName">
         <item name="android:transitionName">@string/transition_name</item>
-    </style>
-
-    <style name="transitionGroup">
-        <item name="android:transitionGroup">false</item>
     </style>
 
     <!-- 阴影 -->

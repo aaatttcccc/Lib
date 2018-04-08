@@ -103,10 +103,6 @@
         <item>惊蛰</item>
     </string-array>
 
-    <string-array name="western_festival">
-
-    </string-array>
-
     <string name="sun">Sun</string>
     <string name="mon">Mon</string>
     <string name="tue">Tue</string>
