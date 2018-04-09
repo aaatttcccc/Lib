@@ -12,6 +12,8 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name="com.lzy.imagepicker.ui.ImageGridActivity" />
 
     </application>
 
