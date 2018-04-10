@@ -87,8 +87,8 @@ dependencies {
     //发送事件
     compile 'org.greenrobot:eventbus:3.0.0'
     //封装的拍照、选择照片事件
-//    compile 'com.lzy.widget:imagepicker:0.6.1'
-    compile project(':ImagePicker:imagepicker')
+    compile 'com.lzy.widget:imagepicker:0.6.1'
+//    compile project(':ImagePicker:imagepicker')
     // Luban图片压缩
 //    compile 'top.zibin:Luban:1.1.3'
 }
