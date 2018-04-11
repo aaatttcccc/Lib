@@ -31,7 +31,7 @@ public class DataList extends ArrayList<DataMap> implements List<DataMap> {
         this.dataListName = webListName;
     }
 
-    /* *
+    /**
      * cursor转换成dataList
      * @param cursor
      * @param mIDataListLoop 接口，用于循环中对数据做处理
@@ -54,7 +54,7 @@ public class DataList extends ArrayList<DataMap> implements List<DataMap> {
         return list;
     }
 
-    /* *
+    /**
      * cursor转换成dataList
      * @param cursor
      * @return

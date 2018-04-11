@@ -198,7 +198,7 @@ public abstract class BaseLoadMoreRecyclerAdapter<T, VH extends RecyclerView.Vie
 
 
     //添加删除更新事件
-/* *
+/**
      * 添加
      * @param position 索引
      * @param object 对象
@@ -209,7 +209,7 @@ public abstract class BaseLoadMoreRecyclerAdapter<T, VH extends RecyclerView.Vie
         notifyItemRangeChanged(position, list.size());
     }
 
-    /* *
+    /**
      * 更新
      * @param position 索引
      * @param object 对象
@@ -219,7 +219,7 @@ public abstract class BaseLoadMoreRecyclerAdapter<T, VH extends RecyclerView.Vie
         notifyItemChanged(position);
     }
 
-    /* *
+    /**
      * 删除
      * @param position 索引
      */
