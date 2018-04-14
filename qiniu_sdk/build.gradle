@@ -20,8 +20,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.qiniu:qiniu-android-sdk:7.3.10'
+    testImplementation 'junit:junit:4.12'
+    api 'com.qiniu:qiniu-android-sdk:7.3.10'
     implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
     //******************************* 框架库 ****************************************//
 

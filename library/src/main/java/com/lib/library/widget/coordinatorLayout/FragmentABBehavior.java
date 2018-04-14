@@ -1,4 +1,4 @@
-package com.lib.library.utils.view.coordinatorlayout;
+package com.lib.library.widget.coordinatorLayout;
 
 import android.support.design.widget.FloatingActionButton;
 

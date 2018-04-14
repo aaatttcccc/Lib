@@ -13,5 +13,5 @@ android {
 
 dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
-    compile project(':Lib:fragmentation_core')
+    api project(':Lib:fragmentation_core')
 }

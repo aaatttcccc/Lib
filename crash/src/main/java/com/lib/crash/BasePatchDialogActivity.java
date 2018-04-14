@@ -3,12 +3,8 @@ package com.lib.crash;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
-
-import org.ksoap2.serialization.PropertyInfo;
 
 /**
  * Created by shenhuniurou
