@@ -197,7 +197,7 @@ public class CircularRevealAnimationUtils {
             this.height = in.readInt();
         }
 
-        public final Creator<RevealAnimationSetting> CREATOR = new Creator<RevealAnimationSetting>() {
+        public static final Parcelable.Creator<RevealAnimationSetting> CREATOR = new Parcelable.Creator<RevealAnimationSetting>() {
             @Override
             public RevealAnimationSetting createFromParcel(Parcel source) {
                 return new RevealAnimationSetting(source);
