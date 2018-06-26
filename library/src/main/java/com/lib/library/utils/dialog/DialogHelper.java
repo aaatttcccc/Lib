@@ -1,5 +1,6 @@
 package com.lib.library.utils.dialog;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
@@ -37,17 +38,57 @@ public class DialogHelper {
     /**
      * 创建提示内容
      *
-     * @param context     上下文
+     * @param activity    窗体
      * @param message     信息内容
      * @param isAutoClose 是否自动关闭
      * @param iconType    ERROR_TYPE,SUCCESS_TYPE,WARNING_TYPE 3种类型
      */
-    public static void showSimpleDialog(Context context, CharSequence message, boolean isAutoClose, int iconType) {
-        final SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(context, iconType);
-        sweetAlertDialog.setTitleText(context.getResources().getString(R.string.msg_alter_title));
+    public static void showSimpleDialog(Activity activity, CharSequence message, boolean isAutoClose, int iconType) {
+        final SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(activity, iconType);
+        sweetAlertDialog.setTitleText(activity.getResources().getString(R.string.msg_alter_title));
+        sweetAlertDialog.setConfirmText("确定");
         sweetAlertDialog.setContentText(message.toString());
         sweetAlertDialog.show();
         sweetAlertDialog.setCancelable(true);//设置点击外部取消
+        if (isAutoClose) {
+            new Handler().postDelayed(() -> {
+                if (sweetAlertDialog.isShowing()) {
+                    sweetAlertDialog.dismiss();
+                }
+            }, 1000);
+        }
+        sweetAlertDialog.show();
+    }
+
+    /**
+     * 创建提示内容
+     *
+     * @param activity               窗体
+     * @param message                信息内容
+     * @param isAutoClose            是否自动关闭
+     * @param iconType               ERROR_TYPE,SUCCESS_TYPE,WARNING_TYPE 3种类型
+     * @param onConfirmClickListener 确定事件
+     * @param onCancelClickListener  取消事件
+     */
+    public static void showSimpleDialog(Activity activity, CharSequence message, boolean isAutoClose, int iconType,
+                                        SweetAlertDialog.OnSweetClickListener onConfirmClickListener, SweetAlertDialog.OnSweetClickListener onCancelClickListener) {
+        final SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(activity, iconType);
+        sweetAlertDialog.setTitleText(activity.getResources().getString(R.string.msg_alter_title));
+        sweetAlertDialog.setConfirmText("确定");
+        sweetAlertDialog.setContentText(message.toString());
+        sweetAlertDialog.show();
+        sweetAlertDialog.setCancelable(true);//设置点击外部取消
+        sweetAlertDialog.setConfirmClickListener(sweetAlertDialog1 -> {
+            onConfirmClickListener.onClick(sweetAlertDialog1);
+            sweetAlertDialog1.dismiss();
+        });
+        if (onCancelClickListener != null) {
+            sweetAlertDialog.setCancelText("取消");
+            sweetAlertDialog.setCancelClickListener(sweetAlertDialog1 -> {
+                onCancelClickListener.onClick(sweetAlertDialog1);
+                sweetAlertDialog1.dismiss();
+            });
+        }
         if (isAutoClose) {
             new Handler().postDelayed(() -> {
                 if (sweetAlertDialog.isShowing()) {
