@@ -67,7 +67,6 @@ dependencies {
     api project(':Lib:eventbus_activity_scope')
 //    compile 'me.yokeyword:fragmentation:1.1.8'
     api project(path: ':commonFinal')
-    api project(':Lib:luban')
 
     //******************************* 框架库 ****************************************//
     api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
@@ -94,7 +93,7 @@ dependencies {
     //封装的拍照、选择照片事件
     api 'com.lzy.widget:imagepicker:0.6.1'
     // Luban图片压缩
-//    compile 'top.zibin:Luban:1.1.3'
+    api 'top.zibin:Luban:1.1.3'
 
 
 }

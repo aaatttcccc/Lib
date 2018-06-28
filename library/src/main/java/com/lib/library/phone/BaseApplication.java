@@ -7,10 +7,8 @@ import android.widget.Toast;
 
 public class BaseApplication extends Application {
 
-    private BaseActivity mCurrentActivity;
     private static String baseUrl;
     private static BaseApplication mInstance = null;
-    protected Boolean networkAvailable = false;
     private Toast mToast;
 
     public static BaseApplication getInstance() {
@@ -76,6 +74,7 @@ public class BaseApplication extends Application {
 
             @Override
             public void onActivityResumed(Activity activity) {
+                MyActivityManager.getInstance().setCurrentActivity(activity);
             }
 
             @Override
@@ -88,11 +87,6 @@ public class BaseApplication extends Application {
 
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                try {
-                    mCurrentActivity = (BaseActivity) activity;
-                } catch (Exception ex) {
-                    //抛出异常是为了一些第三方本身是Activity
-                }
             }
         });
     }
