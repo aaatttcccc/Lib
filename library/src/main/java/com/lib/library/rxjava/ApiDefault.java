@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.lib.library.phone.BaseApplication;
-import com.lib.library.utils.network.NetWorkUtil;
+import com.lib.library.utils.netstate.NetWorkUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,7 +61,7 @@ public class ApiDefault {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            if (!NetWorkUtil.isNetConnected(BaseApplication.getInstance().getBaseContext())) {
+            if (!NetWorkUtil.isNetworkConnected(BaseApplication.getInstance().getBaseContext())) {
                 request = request.newBuilder()
                         .cacheControl(CacheControl.FORCE_CACHE)
                         .build();
@@ -69,7 +69,7 @@ public class ApiDefault {
             }
 
             Response originalResponse = chain.proceed(request);
-            if (NetWorkUtil.isNetConnected(BaseApplication.getInstance().getBaseContext())) {
+            if (NetWorkUtil.isNetworkConnected(BaseApplication.getInstance().getBaseContext())) {
                 //有网的时候读接口上的@Headers里的配置，你可以在这里进行统一的设置
                 String cacheControl = request.cacheControl().toString();
                 return originalResponse.newBuilder()

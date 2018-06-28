@@ -11,7 +11,7 @@ import android.telephony.TelephonyManager;
  * 检测当前网络的工具
  * Created by Administrator on 2017/8/12 0012.
  */
-public class NetWorkUtils {
+public class NetWorkUtil {
 
     /**
      * 判断是否有网络连接

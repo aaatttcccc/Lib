@@ -1,4 +1,4 @@
-package com.lib.library.utils;
+package com.lib.library.utils.java;
 
 /**
  * @Description 对象工具类
