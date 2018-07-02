@@ -5,6 +5,23 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
 
+    <!--白天主题-->
+    <style name="BlueTheme" parent="Base.Theme.DesignDemo">
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorPrimaryDark">@color/blue_primary_dark</item>
+        <item name="colorAccent">@color/blue_accent</item>
+        <item name="colorControlActivated">@color/blue_accent</item>
+    </style>
+
+    <!--夜间主题-->
+    <style name="NightTheme" parent="Base.Theme.DesignDemo">
+        <item name="colorPrimary">#3A3A3A</item>
+        <item name="colorPrimaryDark">#3F3F3F</item>
+        <item name="colorAccent">#868686</item>
+        <item name="clockBackground">@color/night_colorBackground</item>
+        <item name="clockTextColor">@color/night_colorTextColor</item>
+    </style>
+
     <!-- 各种主题颜色 -->
     <style name="RedTheme" parent="Base.Theme.DesignDemo">
         <item name="colorPrimary">@color/red_primary</item>
@@ -25,14 +42,6 @@
         <item name="colorPrimaryDark">@color/brown_primary_dark</item>
         <item name="colorAccent">@color/brown_accent</item>
         <item name="colorControlActivated">@color/brown_accent</item>
-    </style>
-
-
-    <style name="BlueTheme" parent="Base.Theme.DesignDemo">
-        <item name="colorPrimary">@color/blue_primary</item>
-        <item name="colorPrimaryDark">@color/blue_primary_dark</item>
-        <item name="colorAccent">@color/blue_accent</item>
-        <item name="colorControlActivated">@color/blue_accent</item>
     </style>
 
 
@@ -158,6 +167,10 @@
         <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
         <!-- 左侧顶部菜单的控件 -->
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+
+        <item name="clockBackground">@android:color/white</item>
+        <item name="clockTextColor">@android:color/black</item>
 
 
     </style>

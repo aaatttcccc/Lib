@@ -7,12 +7,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 
 import com.lib.library.phone.base.MySupportActivity;
 import com.lib.library.utils.InputUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import me.yokeyword.fragmentation.SupportActivity;
@@ -100,6 +102,8 @@ public abstract class BaseActivity extends MySupportActivity {
         InputUtils.hideSoftInput(getActivity());
         super.onPause();
     }
+
+
 
 
     /**

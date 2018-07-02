@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+
     <!--500 #03A9F4 bar-->
     <!--50#E1F5FE-->
     <!--100#B3E5FC-->
@@ -12,6 +14,11 @@
     <!--700#0288D1 状态栏-->
     <!--800#0277BD-->
     <!--900#01579B-->
+
+    <!-- 天黑的背景颜色 -->
+    <color name="night_colorBackground">#3F3F3F</color>
+    <color name="night_colorTextColor">#8A9599</color>
+
 
     <color name="transparent">#00000000</color>
     <color name="window_background">#FFF5F5F5</color>
