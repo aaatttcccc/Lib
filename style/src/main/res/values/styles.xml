@@ -5,7 +5,7 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
 
-    <!--白天主题-->
+    <!--白天的蓝色主题-->
     <style name="BlueTheme" parent="Base.Theme.DesignDemo">
         <item name="colorPrimary">@color/blue_primary</item>
         <item name="colorPrimaryDark">@color/blue_primary_dark</item>
