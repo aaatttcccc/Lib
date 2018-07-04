@@ -4,4 +4,6 @@
     <attr name="clockBackground" format="color" />
     <!-- 自定义字体颜色 -->
     <attr name="clockTextColor" format="color" />
+    <!-- 线的颜色 -->
+    <attr name="black_dividers_text" format="color" />
 </resources>

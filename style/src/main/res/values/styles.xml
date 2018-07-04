@@ -20,6 +20,7 @@
         <item name="colorAccent">#868686</item>
         <item name="clockBackground">@color/night_colorBackground</item>
         <item name="clockTextColor">@color/night_colorTextColor</item>
+        <item name="black_dividers_text">#3F3F3F</item>
     </style>
 
     <!-- 各种主题颜色 -->
@@ -104,12 +105,6 @@
         <item name="colorControlActivated">@color/amber_accent</item>
     </style>
 
-    <!-- main theme -->
-    <style name="Theme.DesignDemo.Main" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
-
     <style name="Base.Theme.Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:textColor">@android:color/white</item>
         <item name="colorButtonNormal">@color/primary_dark</item>
@@ -171,6 +166,9 @@
 
         <item name="clockBackground">@android:color/white</item>
         <item name="clockTextColor">@android:color/black</item>
+
+        <!-- 自定义的线颜色 -->
+        <item name="black_dividers_text">#12000000</item>
 
 
     </style>
