@@ -29,6 +29,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testApi 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
 }
