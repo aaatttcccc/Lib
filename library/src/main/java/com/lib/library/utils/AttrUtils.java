@@ -16,7 +16,7 @@ import android.view.View;
 public class AttrUtils {
 
     /**
-     * 获取系统默认颜色
+     * 获取attr颜色
      *
      * @param context 上下文
      * @param resid   目前所知有以下4种颜色：R.attr.colorPrimary R.attr.colorPrimaryDark R.attr.colorAccent R.attr.colorControlActivated
