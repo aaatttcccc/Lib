@@ -1,3 +1,3 @@
 
-include ':app', ':library', ':datalist', ':style', ':materialsearchview', ':crash', ':complextable', ':sweetsheet', ':fragmentation', ':fragmentation_core', ':calendarview'
+include ':app', ':library', ':datalist', ':style', ':materialsearchview', ':crash', ':complextable', ':sweetsheet', ':fragmentation', ':fragmentation_core', ':calendarview',':sweet_alert_dialog',':eventbus_activity_scope',':luban'
 
