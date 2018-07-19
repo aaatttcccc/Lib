@@ -20,8 +20,8 @@
     <style name="NightTheme" parent="Base.Theme.DesignDemo">
         <item name="colorPrimary">#3A3A3A</item>
         <item name="colorPrimaryDark">#3F3F3F</item>
-        <item name="colorAccent">#868686</item>
-        <item name="colorControlActivated">#868686</item>
+        <item name="colorAccent">@color/night_colorAccent</item>
+        <item name="colorControlActivated">@color/night_colorAccent</item>
         <item name="clockBackground">@color/night_colorBackground</item>
         <item name="clockTextColor">@color/night_colorTextColor</item>
         <item name="black_dividers_text">#3F3F3F</item>
