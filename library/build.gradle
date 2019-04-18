@@ -90,8 +90,8 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.2.0'
     //发送事件
     api 'org.greenrobot:eventbus:3.0.0'
-    //封装的拍照、选择照片事件
-    api 'com.lzy.widget:imagepicker:0.6.1'
+//    //封装的拍照、选择照片事件 这个弃用，如果是旧项目，可以在app上调用
+//    api 'com.lzy.widget:imagepicker:0.6.1'
     // Luban图片压缩
     api 'top.zibin:Luban:1.1.3'
 
