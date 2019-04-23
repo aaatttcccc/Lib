@@ -30,7 +30,6 @@ public class SdcardUtils {
 
     private static SdcardUtils mSdcardUtils;
 
-
     public static synchronized SdcardUtils instance() {
         if (mSdcardUtils == null) {
             mSdcardUtils = new SdcardUtils();

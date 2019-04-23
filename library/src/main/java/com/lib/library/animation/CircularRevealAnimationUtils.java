@@ -2,13 +2,13 @@ package com.lib.library.animation;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.graphics.drawable.ArgbEvaluator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -95,7 +95,6 @@ public class CircularRevealAnimationUtils {
             anim.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    //Important: This will prevent the view's flashing (visible between the finished animation and the Fragment remove)
                     view.setVisibility(View.GONE);
                     listener.onAnimationFinished();
                 }
