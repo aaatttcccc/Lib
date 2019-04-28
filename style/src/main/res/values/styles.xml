@@ -1,4 +1,4 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:ignore="NewApi">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -174,12 +174,6 @@
         <item name="colorControlActivated">@color/colorControlActivated</item>
         <!-- 类似文本框选择之后,5.0版本以下用的styles.xml -->
         <item name="colorControlNormal">@color/black_dividers_text</item>
-        <!-- 类似文本框没选择之前 -->
-        <item name="android:statusBarColor">@color/primary_dark</item>
-        <!-- MD风格所需要的,透明 -->
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerItemStyle</item>
         <!-- 所有字体颜色 -->
         <!--<item name="android:textColorPrimary">@color/text_light</item>-->
