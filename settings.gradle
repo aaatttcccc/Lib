@@ -11,6 +11,5 @@ include ':app',
         ':calendarview',
         ':sweet_alert_dialog',
         ':eventbus_activity_scope',
-        ':luban',
-        ':morphtransitions'
+        ':luban'
 
