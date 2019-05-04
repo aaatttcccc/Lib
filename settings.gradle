@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':sardine',
         ':library',
         ':datalist',
         ':style',
