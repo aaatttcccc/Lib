@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.view.WindowManager;
 
 import com.lib.library.utils.constants.ScreenConstants;
+import com.lib.library.utils.storage.PreferenceUtils;
 import com.lib.library.utils.storage.SPUtils;
 
 /**
@@ -20,7 +21,7 @@ public class DisplayMetricsSPUtils {
      * @return 高
      */
     public static int getScreenHeight(Context context) {
-        if (SPUtils.getInstance().getInt(ScreenConstants.ScreenHeight, 0) == 0) {
+        if (PreferenceUtils.getInstance(context).getIntParam(ScreenConstants.ScreenHeight, 0) == 0) {
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             Point size = new Point();
             wm.getDefaultDisplay().getSize(size);
