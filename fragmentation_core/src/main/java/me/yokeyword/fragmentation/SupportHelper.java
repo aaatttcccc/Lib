@@ -1,20 +1,22 @@
 package me.yokeyword.fragmentation;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentationMagician;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
  * Created by YoKey on 17/6/13.
  */
-
 public class SupportHelper {
-    private static final long SHOW_SPACE = 200L;
+    private static final long SHOW_SPACE = 0;
 
     private SupportHelper() {
     }
@@ -26,12 +28,8 @@ public class SupportHelper {
         if (view == null || view.getContext() == null) return;
         final InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         view.requestFocus();
-        view.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                imm.showSoftInput(view, InputMethodManager.SHOW_FORCED);
-            }
-        }, SHOW_SPACE);
+        MyHandler myHandler = new MyHandler(imm,view);
+        myHandler.sendMessageDelayed(myHandler.obtainMessage(0), SHOW_SPACE);
     }
 
     /**
@@ -40,7 +38,8 @@ public class SupportHelper {
     public static void hideSoftInput(View view) {
         if (view == null || view.getContext() == null) return;
         InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if (imm != null)
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     /**
@@ -169,4 +168,31 @@ public class SupportHelper {
         }
         return parentFragment;
     }
+
+    /**
+     * 创建静态内部类
+     */
+    private static class MyHandler extends Handler {
+
+        //持有弱引用HandlerActivity,GC回收时会被回收掉.
+        private final WeakReference<InputMethodManager> mInputMethodManager;
+        private final WeakReference<View> mView;
+
+        public MyHandler(InputMethodManager inputMethodManager,View view){
+            mInputMethodManager = new WeakReference<>(inputMethodManager);
+            mView = new WeakReference<>(view);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            InputMethodManager inputMethodManager= mInputMethodManager.get();
+            View view = mView.get();
+            super.handleMessage(msg);
+            if(inputMethodManager != null && view != null){
+                //执行业务逻辑
+                inputMethodManager.showSoftInput(view, InputMethodManager.SHOW_FORCED);
+            }
+        }
+    }
+
 }
