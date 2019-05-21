@@ -87,7 +87,11 @@ public class BottomSheetUtils {
             if (sweetSheet.getmMenuEntities().size() == 2)
                 recyclerViewDelegate.setContentHeight(DisplayMetricsUtils.dip2px(125));// 设置高度
             if (sweetSheet.getmMenuEntities().size() == 3)
-                recyclerViewDelegate.setContentHeight(DisplayMetricsUtils.dip2px(186));// 设置高度
+                recyclerViewDelegate.setContentHeight(DisplayMetricsUtils.dip2px(188));// 设置高度
+            if (sweetSheet.getmMenuEntities().size() == 4)
+                recyclerViewDelegate.setContentHeight(DisplayMetricsUtils.dip2px(251));// 设置高度
+            if (sweetSheet.getmMenuEntities().size() == 5)
+                recyclerViewDelegate.setContentHeight(DisplayMetricsUtils.dip2px(314));// 设置高度
             sweetSheet.setDelegate(recyclerViewDelegate);
             sweetSheet.setBackgroundEffect(new DimEffect(4));
             InputUtils.hideSoftInput(activity);
