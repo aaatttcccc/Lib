@@ -1342,7 +1342,7 @@ public final class TimeUtils {
 
     /**
      * 获取星期索引
-     * <p>注意：周日的Index才是1，周六为7</p>
+     * <p>注意：周日的Index才是1，周六为7，周五为6</p>
      *
      * @param date Date类型时间
      * @return 1...7
