@@ -103,9 +103,6 @@ public abstract class BaseActivity extends MySupportActivity {
         super.onPause();
     }
 
-
-
-
     /**
      * 返回自己
      */
