@@ -161,11 +161,6 @@
     <style name="Base.Theme.DesignDemo" parent="Theme.AppCompat.Light.NoActionBar">
         <!--在无需多点触控的页面上，建议关闭多点触控-->
         <item name="android:splitMotionEvents">false</item>
-        <!-- 半透明 -->
-        <!--<item name="android:windowIsTranslucent">true</item>-->
-        <!-- 透明的背景 -->
-        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
-
         <!-- toolbar本身的颜色 -->
         <item name="colorPrimary">@color/primary</item>
         <!-- toolbar顶部状态栏的颜色 -->
@@ -175,10 +170,8 @@
         <!-- 类似文本框选择之后,5.0版本以下用的styles.xml -->
         <item name="colorControlNormal">@color/black_dividers_text</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerItemStyle</item>
-        <!-- 所有字体颜色 -->
-        <!--<item name="android:textColorPrimary">@color/text_light</item>-->
         <!-- 修改所有字体. -->
-        <!--<item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>-->
+        <item name="android:textViewStyle">@style/style1</item>
         <!-- Action Bar Theme -->
         <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
         <!-- 左侧顶部菜单的控件 -->
@@ -192,6 +185,15 @@
         <item name="black_dividers_text">#12000000</item>
 
 
+    </style>
+
+    <style name="style1">
+        <item name="android:textColor">#333333</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <!-- 辅助main样式的,AppTheme ActionBar的样式 -->
