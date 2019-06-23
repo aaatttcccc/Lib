@@ -167,6 +167,8 @@
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorControlActivated">@color/colorControlActivated</item>
+        <item name="clockBackground">@color/window_background</item>
+        <item name="clockTextColor">@android:color/black</item>
         <!-- 类似文本框选择之后,5.0版本以下用的styles.xml -->
         <item name="colorControlNormal">@color/black_dividers_text</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerItemStyle</item>
@@ -178,8 +180,6 @@
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 
 
-        <item name="clockBackground">@android:color/white</item>
-        <item name="clockTextColor">@android:color/black</item>
 
         <!-- 自定义的线颜色 -->
         <item name="black_dividers_text">#12000000</item>
