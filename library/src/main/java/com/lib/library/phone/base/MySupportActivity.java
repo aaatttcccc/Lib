@@ -184,15 +184,13 @@ public class MySupportActivity extends AppCompatActivity implements ISupportActi
      * 得到位于栈顶Fragment
      */
     public ISupportFragment getTopFragment() {
-//        return SupportHelper.getTopFragment(getSupportFragmentManager());
-        return null;
+        return SupportHelper.getTopFragment(getSupportFragmentManager());
     }
 
     /**
      * 获取栈内的fragment对象
      */
     public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
-//        return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
-        return null;
+        return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
     }
 }
