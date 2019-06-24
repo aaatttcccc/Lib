@@ -19,7 +19,7 @@
     <color name="night_colorBackground">#3F3F3F</color>
     <color name="night_colorTextColor">#8A9599</color>
     <color name="night_colorAccent">#868686</color>
-
+    <color name="night_colorWhite">#3E3E3E</color>
 
     <color name="transparent">#00000000</color>
     <color name="window_background">#FFF5F5F5</color>

@@ -59,11 +59,11 @@ dependencies {
     api project(':Lib:sweetsheet')
     //动感的弹窗
     api project(':Lib:sweet_alert_dialog')
-    //fragment
-    api project(':Lib:fragmentation')
-    // fragment 搭配 eventbus
-    api project(':Lib:eventbus_activity_scope')
-//    compile 'me.yokeyword:fragmentation:1.1.8'
+//    //fragment
+//    api project(':Lib:fragmentation')
+//    // fragment 搭配 eventbus
+//    api project(':Lib:eventbus_activity_scope')
+    implementation 'me.yokeyword:fragmentationx:1.0.1'
     api project(path: ':commonFinal')
 
     //******************************* 框架库 ****************************************//

@@ -22,6 +22,7 @@
         <item name="colorPrimaryDark">#3F3F3F</item>
         <item name="colorAccent">@color/night_colorAccent</item>
         <item name="colorControlActivated">@color/night_colorAccent</item>
+        <item name="clockWhite">@color/night_colorWhite</item>
         <item name="clockBackground">@color/night_colorBackground</item>
         <item name="clockTextColor">@color/night_colorTextColor</item>
         <item name="black_dividers_text">#3F3F3F</item>
@@ -167,24 +168,18 @@
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorControlActivated">@color/colorControlActivated</item>
+        <item name="clockWhite">@color/white_text</item>
         <item name="clockBackground">@color/window_background</item>
         <item name="clockTextColor">@android:color/black</item>
         <!-- 类似文本框选择之后,5.0版本以下用的styles.xml -->
         <item name="colorControlNormal">@color/black_dividers_text</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerItemStyle</item>
-        <!-- 修改所有字体. -->
-        <item name="android:textViewStyle">@style/style1</item>
         <!-- Action Bar Theme -->
         <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
         <!-- 左侧顶部菜单的控件 -->
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
-
-
-
         <!-- 自定义的线颜色 -->
         <item name="black_dividers_text">#12000000</item>
-
-
     </style>
 
     <style name="style1">

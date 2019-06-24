@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 自定义背景颜色 -->
+    <!-- 自定义白色颜色.顺便兼容夜间模式的黑色 -->
+    <attr name="clockWhite" format="color" />
+    <!-- 自定义背景颜色.顺便兼容夜间模式的黑色 -->
     <attr name="clockBackground" format="color" />
-    <!-- 自定义字体颜色 -->
+    <!-- 自定义字体颜色.顺便兼容夜间模式的黑色 -->
     <attr name="clockTextColor" format="color" />
     <!-- 线的颜色 -->
     <attr name="black_dividers_text" format="color" />
