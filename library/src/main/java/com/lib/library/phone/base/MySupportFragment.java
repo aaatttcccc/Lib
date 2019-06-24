@@ -41,7 +41,7 @@ public class MySupportFragment extends Fragment implements ISupportFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mDelegate.onAttach(activity);
-//        _mActivity = mDelegate.getActivity();
+        _mActivity = mDelegate.getActivity();
     }
 
     @Override
