@@ -355,7 +355,6 @@ public class MySupportFragment extends Fragment implements ISupportFragment {
      * 获取栈内的fragment对象
      */
     public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
-//        return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
-        return null;
+        return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
     }
 }
