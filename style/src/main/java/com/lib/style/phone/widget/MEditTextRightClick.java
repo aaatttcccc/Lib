@@ -51,7 +51,7 @@ public class MEditTextRightClick extends android.support.v7.widget.AppCompatEdit
 		/**
 		 * 成功
 		 */
-		public void onClick();
+		void onClick();
 	}
 
 	/**
