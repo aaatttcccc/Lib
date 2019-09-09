@@ -28,6 +28,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
 
-    //搜索框 https://github.com/Mauker1/MaterialSearchView
+    // 搜索框 https://github.com/Mauker1/MaterialSearchView
     api 'br.com.mauker.materialsearchview:materialsearchview:1.2.3'
 }
