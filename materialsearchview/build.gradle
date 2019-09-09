@@ -27,8 +27,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-    testImplementation 'junit:junit:4.12'
 
     //搜索框 https://github.com/Mauker1/MaterialSearchView
-    api 'br.com.mauker.materialsearchview:materialsearchview:1.2.2'
+    api 'br.com.mauker.materialsearchview:materialsearchview:1.2.3'
 }

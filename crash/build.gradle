@@ -35,5 +35,5 @@ dependencies {
     //样式包
     implementation project(':Lib:style')
 
-    implementation project(path: ':Lib:library')
+    implementation project(':Lib:library')
 }
