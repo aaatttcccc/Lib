@@ -1,4 +1,5 @@
-include ':app', ':sardine',
+include ':app',
+        ':sardine',
         ':library',
         ':datalist',
         ':style',
@@ -12,4 +13,3 @@ include ':app', ':sardine',
         ':sweet_alert_dialog',
         ':eventbus_activity_scope',
         ':luban'
-
