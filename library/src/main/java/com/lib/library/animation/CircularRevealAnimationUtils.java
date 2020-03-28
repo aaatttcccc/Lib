@@ -93,10 +93,17 @@ public class CircularRevealAnimationUtils {
             anim.setDuration(getMediumDuration(context));
             anim.setInterpolator(new FastOutSlowInInterpolator());
             anim.addListener(new AnimatorListenerAdapter() {
+
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    super.onAnimationStart(animation);
+                }
+
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    view.setVisibility(View.GONE);
                     listener.onAnimationFinished();
+                    view.setVisibility(View.GONE);
+                    super.onAnimationEnd(animation);
                 }
             });
             anim.start();

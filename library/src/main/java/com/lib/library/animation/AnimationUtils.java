@@ -1,11 +1,10 @@
 package com.lib.library.animation;
 
 import android.content.Context;
-import android.graphics.drawable.Animatable2;
-import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
+import android.support.graphics.drawable.Animatable2Compat;
+import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
@@ -27,28 +26,39 @@ public class AnimationUtils {
     /**
      * 回调接口
      */
-    public interface OnVectorAnimationEnd {
+    public interface OnVectorAnimation {
+
+        /**
+         * 初始动画
+         */
+        void onAnimationStart();
+
+        /**
+         * 结束动画
+         */
         void onAnimationEnd();
     }
 
     /**
      * 兼容VectorAnimation
      *
-     * @param animatedVectorDrawable 该控件
-     * @param onVectorAnimationEnd   结束动画事件
+     * @param animatedVectorDrawableCompat 该控件
+     * @param onVectorAnimation         结束动画事件
      */
-    public static void VectorAnimationCallback(AnimatedVectorDrawable animatedVectorDrawable, OnVectorAnimationEnd onVectorAnimationEnd) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            animatedVectorDrawable.registerAnimationCallback(new Animatable2.AnimationCallback() {
-                @Override
-                public void onAnimationEnd(Drawable drawable) {
-                    onVectorAnimationEnd.onAnimationEnd();
-                    super.onAnimationEnd(drawable);
-                }
-            });
-        } else {
-            onVectorAnimationEnd.onAnimationEnd();
-        }
+    public static void VectorAnimationCallback(AnimatedVectorDrawableCompat animatedVectorDrawableCompat, OnVectorAnimation onVectorAnimation) {
+        animatedVectorDrawableCompat.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+            @Override
+            public void onAnimationStart(Drawable drawable) {
+                onVectorAnimation.onAnimationStart();
+                super.onAnimationStart(drawable);
+            }
+
+            @Override
+            public void onAnimationEnd(Drawable drawable) {
+                onVectorAnimation.onAnimationEnd();
+                super.onAnimationEnd(drawable);
+            }
+        });
     }
 
 
@@ -101,6 +111,22 @@ public class AnimationUtils {
         animation.setRepeatMode(Animation.RESTART);
         animation.setRepeatCount(Animation.INFINITE);
         view.startAnimation(animation);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.clearAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
     /**
@@ -114,6 +140,7 @@ public class AnimationUtils {
 
     /**
      * 上升动画
+     *
      * @param floatingActionButton floatingActionButton
      */
     public static void RisingAnimation(FloatingActionButton floatingActionButton) {
