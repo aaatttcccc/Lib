@@ -1,6 +1,6 @@
 package com.lib.library.widget;
 
-import android.support.design.widget.TabLayout;
+import com.google.android.material.tabs.TabLayout;
 import android.widget.LinearLayout;
 
 /**

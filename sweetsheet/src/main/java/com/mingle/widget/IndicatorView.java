@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Interpolator;
@@ -15,6 +14,8 @@ import com.nineoldandroids.view.ViewHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * @author zzz40500
@@ -157,7 +158,7 @@ public class IndicatorView extends LinearLayout implements ViewPager.OnPageChang
 
     @Override
     public void superOnDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        super.draw(canvas);
     }
 
     @Override

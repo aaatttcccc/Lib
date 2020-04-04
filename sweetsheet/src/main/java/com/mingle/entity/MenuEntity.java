@@ -1,10 +1,9 @@
 package com.mingle.entity;
 
 import android.graphics.drawable.Drawable;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.ColorInt;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.ColorInt;
 
 
 /**

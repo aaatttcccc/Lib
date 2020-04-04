@@ -11,7 +11,7 @@ import android.view.MotionEvent;
  * @author zhongjh
  * 
  */
-public class MEditTextRightClick extends android.support.v7.widget.AppCompatEditText {
+public class MEditTextRightClick extends androidx.appcompat.widget.AppCompatEditText {
 
 	public MEditTextRightClick(Context context) {
 		this(context, null);

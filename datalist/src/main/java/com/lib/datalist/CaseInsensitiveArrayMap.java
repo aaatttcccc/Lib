@@ -1,7 +1,7 @@
 package com.lib.datalist;
 
 
-import android.support.v4.util.ArrayMap;
+import androidx.collection.ArrayMap;
 
 import java.util.Locale;
 import java.util.Map;

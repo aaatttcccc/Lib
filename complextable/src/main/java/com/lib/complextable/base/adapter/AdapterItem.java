@@ -1,6 +1,6 @@
 package com.lib.complextable.base.adapter;
 
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.view.View;
 
 /**

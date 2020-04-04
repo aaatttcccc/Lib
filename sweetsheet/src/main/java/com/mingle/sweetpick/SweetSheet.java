@@ -1,12 +1,11 @@
 package com.mingle.sweetpick;
 
-import android.support.annotation.MenuRes;
-import android.support.v7.widget.PopupMenu;
+import androidx.annotation.MenuRes;
+import androidx.appcompat.widget.PopupMenu;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;

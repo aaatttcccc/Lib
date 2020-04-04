@@ -1,6 +1,6 @@
 package com.zhongjh.sardine.impl;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.zhongjh.sardine.DavAce;
 import com.zhongjh.sardine.DavAcl;

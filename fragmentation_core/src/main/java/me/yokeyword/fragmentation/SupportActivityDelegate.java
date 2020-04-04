@@ -1,13 +1,13 @@
 package me.yokeyword.fragmentation;
 
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentationMagician;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.app.FragmentationMagician;
 import android.view.MotionEvent;
 
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;

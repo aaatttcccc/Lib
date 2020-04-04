@@ -1,7 +1,5 @@
 package com.mingle.sweetpick;
 
-import android.graphics.Color;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;

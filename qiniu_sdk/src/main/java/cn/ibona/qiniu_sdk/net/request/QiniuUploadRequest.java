@@ -1,7 +1,7 @@
 package cn.ibona.qiniu_sdk.net.request;
 
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.UpCompletionHandler;

@@ -2,11 +2,11 @@ package com.lib.library.animation;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.graphics.drawable.Animatable2Compat;
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
+import androidx.core.view.ViewCompat;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;

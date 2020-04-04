@@ -1,6 +1,6 @@
 package com.lib.library.widget.coordinatorLayout;
 
-import android.support.design.widget.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * Created by Administrator on 2017\11\14 0014.

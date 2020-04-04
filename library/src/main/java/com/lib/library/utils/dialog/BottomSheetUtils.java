@@ -1,7 +1,6 @@
 package com.lib.library.utils.dialog;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;

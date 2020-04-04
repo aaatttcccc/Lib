@@ -8,7 +8,7 @@ import android.util.AttributeSet;
  * 自定EditText,起初是为了解决setOnTouchListener
  * Created by Administrator on 2017\11\27 0027.
  */
-public class EditText extends android.support.v7.widget.AppCompatEditText {
+public class EditText extends androidx.appcompat.widget.AppCompatEditText {
 
 
     public EditText(Context context) {

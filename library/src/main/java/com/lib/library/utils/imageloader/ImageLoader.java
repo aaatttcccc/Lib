@@ -3,9 +3,9 @@ package com.lib.library.utils.imageloader;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
+import androidx.fragment.app.Fragment;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -13,8 +13,6 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.lib.library.R;
-
-import static com.bumptech.glide.request.RequestOptions.fitCenterTransform;
 
 /**
  * 异步加载图片

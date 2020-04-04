@@ -1,24 +1,13 @@
 package com.lib.library.phone;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 
 import com.lib.library.phone.base.MySupportActivity;
 import com.lib.library.utils.InputUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import me.yokeyword.fragmentation.SupportActivity;
-import me.yokeyword.fragmentation.SupportFragment;
 
 
 public abstract class BaseActivity extends MySupportActivity {
