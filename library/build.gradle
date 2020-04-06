@@ -45,7 +45,7 @@ dependencies {
 
     //官方系列包
     api "androidx.appcompat:appcompat:1.0.0"
-    api "com.google.android.material:material:1.0.0"
+    api "com.google.android.material:material:$rootProject.ext.googleAndroidMaterialVersion"
     api "androidx.recyclerview:recyclerview:1.0.0"
     api "androidx.legacy:legacy-support-v4:1.0.0"
 
