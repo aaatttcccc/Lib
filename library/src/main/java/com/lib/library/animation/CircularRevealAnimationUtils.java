@@ -9,7 +9,9 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
@@ -79,7 +81,10 @@ public class CircularRevealAnimationUtils {
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public static void startCircularRevealExitAnimation(Context context, final View view, RevealAnimationSetting revealSettings, int startColor, int endColor, final AnimationFinishedListener listener) {
+    public static void startCircularRevealExitAnimation(Context context, View view, RevealAnimationSetting revealSettings, int startColor, int endColor, final AnimationFinishedListener listener) {
+        if (view == null)
+            // TODO 不知道什么原因导致这个view为null
+            return;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             int cx = revealSettings.getCenterX();
             int cy = revealSettings.getCenterY();
