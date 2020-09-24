@@ -31,7 +31,7 @@ public class CircularRevealAnimationUtils {
     public static int getMediumDuration(Context context) {
         int duration;
         if (true) {
-            duration = context.getResources().getInteger(android.R.integer.config_mediumAnimTime);
+            duration = context.getResources().getInteger(android.R.integer.config_longAnimTime);
         } else {
             duration = 0;
         }
@@ -80,7 +80,6 @@ public class CircularRevealAnimationUtils {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public static void startCircularRevealExitAnimation(Context context, View view, RevealAnimationSetting revealSettings, int startColor, int endColor, final AnimationFinishedListener listener) {
         if (view == null)
             // TODO 不知道什么原因导致这个view为null
