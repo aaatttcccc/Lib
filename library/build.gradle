@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0"
     testImplementation 'junit:junit:4.12'
 
-    //官方系列包
+    // 官方系列包
     api "androidx.appcompat:appcompat:1.0.0"
     api "com.google.android.material:material:$rootProject.ext.googleAndroidMaterialVersion"
     api "androidx.recyclerview:recyclerview:1.0.0"
@@ -54,10 +54,6 @@ dependencies {
     api project(':Lib:sweetsheet')
     //动感的弹窗
     api project(':Lib:sweet_alert_dialog')
-//    //fragment
-//    api project(':Lib:fragmentation')
-//    // fragment 搭配 eventbus
-//    api project(':Lib:eventbus_activity_scope')
     api 'me.yokeyword:fragmentationx:1.0.2'
     api 'me.yokeyword:eventbus-activity-scope:1.1.0'
     api project(':commonFinal')
@@ -83,10 +79,11 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.8.0'
     //发送事件
     api 'org.greenrobot:eventbus:3.0.0'
-//    //封装的拍照、选择照片事件 这个弃用，如果是旧项目，可以在app上调用
-//    api 'com.lzy.widget:imagepicker:0.6.1'
     // Luban图片压缩 https://github.com/Curzibn/Luban
     api 'top.zibin:Luban:1.1.8'
+
+    // 工具类 https://github.com/Blankj/AndroidUtilCode 解释https://blankj.com/2016/07/31/android-utils-code/
+    api 'com.blankj:utilcodex:1.30.1'
 
 
 }

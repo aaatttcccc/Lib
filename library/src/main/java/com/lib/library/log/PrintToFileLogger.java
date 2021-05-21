@@ -31,23 +31,25 @@ public class PrintToFileLogger {
      * 打开
      */
     public void open() {
-        try {
-            //外置SD卡
-            File file;
-            //创建text文件
-            boolean isNew = new File(SdcardUtils.LOG_FOLDER + getCurrentTimeString()
-                    + ".txt").createNewFile();
-            if (!isNew) {
-                //既不存在又创建不了就直接返回
-                return;
-            }
-            file = new File(SdcardUtils.LOG_FOLDER + getCurrentTimeString()
-                    + ".txt");
-            mPath = file.getAbsolutePath();
-            mWriter = new BufferedWriter(new FileWriter(mPath), 2048);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //外置SD卡
+//            File file;
+//            //创建text文件
+//            SdcardUtils.getLogFile();
+//
+//            boolean isNew = new File(SdcardUtils.LOG_FOLDER + getCurrentTimeString()
+//                    + ".txt").createNewFile();
+//            if (!isNew) {
+//                //既不存在又创建不了就直接返回
+//                return;
+//            }
+//            file = new File(SdcardUtils.LOG_FOLDER + getCurrentTimeString()
+//                    + ".txt");
+//            mPath = file.getAbsolutePath();
+//            mWriter = new BufferedWriter(new FileWriter(mPath), 2048);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     /**
@@ -77,10 +79,10 @@ public class PrintToFileLogger {
      * @param message 输入信息
      */
     public void println(String message) {
-        this.open();
-        this.write(message);
-        Log.e("自定义异常：", message);
-        this.close();
+//        this.open();
+//        this.write(message);
+//        Log.e("自定义异常：", message);
+//        this.close();
     }
 
     /**
