@@ -1,5 +1,6 @@
 package com.lib.library.animation;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -103,11 +104,11 @@ public class AnimationUtils {
     /**
      * 旋转动画
      *
-     * @param context 上下文
+     * @param activity 上下文
      * @param view    控件
      */
-    public static void rotate(Context context, View view) {
-        Animation animation = android.view.animation.AnimationUtils.loadAnimation(context, R.anim.rotate);
+    public static void rotate(Activity activity, View view) {
+        Animation animation = android.view.animation.AnimationUtils.loadAnimation(activity, R.anim.rotate);
         animation.setRepeatMode(Animation.RESTART);
         animation.setRepeatCount(Animation.INFINITE);
         view.startAnimation(animation);

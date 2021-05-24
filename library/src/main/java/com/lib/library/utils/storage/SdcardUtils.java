@@ -1,8 +1,7 @@
 package com.lib.library.utils.storage;
 
+import android.content.Context;
 import android.os.Environment;
-
-import com.library.commonFinal.FinalString;
 
 import java.io.File;
 
@@ -10,23 +9,7 @@ import java.io.File;
  * 用于文件管理的公共类
  * on 2017/5/30.
  */
-
 public class SdcardUtils {
-
-    /**
-     * sdcard
-     */
-    public static final String SDCARD_FOLDER = Environment.getExternalStorageDirectory().toString();
-
-    /**
-     * 根目录
-     */
-    public static final String ROOT_FOLDER = SDCARD_FOLDER + "/" + FinalString.APPNAME + "/";
-
-    /**
-     * 日志目录
-     */
-    public static final String LOG_FOLDER = ROOT_FOLDER + "Log/";
 
     private static SdcardUtils mSdcardUtils;
 
@@ -38,12 +21,23 @@ public class SdcardUtils {
     }
 
     /**
-     * sd卡初始化
+     * 获取日志文件夹
+     * @param context 上下文
+     * @return 返回日志文件夹
      */
-    public void initSdcard() {
-        if (!hasSDCard())
+    public static File getLogFile(Context context) {
+        return context.getExternalFilesDir("log");
+    }
+
+    /**
+     * sd卡初始化
+     * app包文件根目录下log文件
+     */
+    public void initSdcard(Context context) {
+        if (!hasSDCard()) {
             return;
-        File logFile = new File(LOG_FOLDER);
+        }
+        File logFile = context.getExternalFilesDir("log");
         if (!logFile.exists()) {
             logFile.mkdirs();
         }
