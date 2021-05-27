@@ -12,19 +12,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name="com.lzy.imagepicker.ui.ImageGridActivity" />
-
-        <!--<provider-->
-            <!--android:name="com.lib.library.widget.CustomFileProvider"-->
-            <!--android:authorities="${applicationId}"-->
-            <!--android:exported="false"-->
-            <!--android:grantUriPermissions="true">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
-                <!--android:resource="@xml/file_provider_path" />-->
-        <!--</provider>-->
-
     </application>
 
 </manifest>
